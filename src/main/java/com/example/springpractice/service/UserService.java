@@ -23,13 +23,14 @@ public class UserService
 
 private static final PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();// i made instance here
 
-public void saveEntry(User user)
+public void saveNewUser(User user)
 {
     user.setPassword(passwordEncoder.encode(user.getPassword()));
-    userRepository.save(user);
     user.setRoles(Arrays.asList("USER"));
+    userRepository.save(user);
+
 }
-    public void saveNewUser(User user)
+    public void saveUser(User user)
     {
         userRepository.save(user);
     }
@@ -41,9 +42,8 @@ public Optional<User> findById(ObjectId id)
 {
     return userRepository.findById(id);
 }
-public boolean deleteById(ObjectId id)
+public void deleteById(ObjectId id)
 {   userRepository.deleteById(id);
-    return true;
 }
 public User findByUserName(String userName)
 {
