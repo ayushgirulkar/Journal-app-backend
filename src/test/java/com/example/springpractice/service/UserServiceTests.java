@@ -1,18 +1,13 @@
 package com.example.springpractice.service;
-import com.example.springpractice.reposiratory.UserRepository;
+
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+@SpringBootTest
+class UserServiceTests {
 
-
-public class UserServiceTests
-{   @Autowired
-    private UserRepository userRepository;
     @Test
-    public void testFindByUserName()
-    {
-        assertEquals(4,2+2);
+    void contextLoads() {
+        System.out.println("Test is running...");
     }
-
 }

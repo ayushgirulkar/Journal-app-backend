@@ -20,16 +20,6 @@ public class JournalApplication {
         SpringApplication.run(JournalApplication.class, args);
 	}
 
-    @Bean
-    public PlatformTransactionManager  add(MongoDatabaseFactory dbFactory)
-    {
-        return new MongoTransactionManager(dbFactory);
-    }
 
-    @Bean
-    public RestTemplate restTemplate()
-    {
-        return new RestTemplate();
-    }
 }
 
